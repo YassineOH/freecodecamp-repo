@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#drum-machine {
+  width: 50%;
+  display: grid;
+  height: 600px;
+  grid-template-columns: 1fr;
+  border: 5px #2e9a0d solid;
+  box-shadow: 0px 0px 40px 2px #333;
+
+  #keys {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.drum-pad {
+  border: 4px #2e9a0d solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #333;
+    color: white;
+  }
+
+  span {
+    font-size: 3rem;
+    font-weight: bolder;
+  }
+}
+
+.clip {
+  height: 0;
+  width: 0;
+}
+
+#display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}

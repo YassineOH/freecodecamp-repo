@@ -1,0 +1,72 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+@mixin flex($dir, $align, $justify, $gap) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+#main {
+  width: 100vw;
+  height: 100vh;
+  @include flex(column, center, center, 5rem);
+  background-color: seashell;
+font-family: 'Roboto',
+sans-serif;
+}
+
+#controlLength {
+  @include flex(row, center, space-between, 0);
+  width: 70vw;
+  margin-bottom: 2rem
+}
+
+.controll {
+  @include flex(column, center, stretch, 3px);
+  border: 6px brown solid;
+  border-radius: 20px;
+  width: 30vw;
+  & > p {
+    font-size: 1.5rem;
+  }
+}
+
+.controll > div {
+  @include flex(row, center, space-between, 3px);
+  width: 100%;
+  font-size: 1.3rem;
+}
+
+button {
+  background: none;
+  font-weight: bolder;
+  border: none;
+  padding: 5px;
+}
+
+
+
+button:hover {
+  background-color: rgba(200, 200, 200, 0.16);
+}
+
+
+#timer {
+    color: brown;
+    font-size: 2rem;
+    border: 6px solid brown;
+    border-radius: 20px;
+    @include flex(column, center, stretch, 3px);
+
+}
+
+
+
+i {
+    font-size: 2.5rem;
+    color: brown;
+}

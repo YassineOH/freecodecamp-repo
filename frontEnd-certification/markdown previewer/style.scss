@@ -1,0 +1,94 @@
+$primary-color: #16a085;
+$secondary-color: #3498db;
+$text-color: #192a56;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin flex($dir, $align, $justify, $gap) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+%container {
+  margin: 2rem auto;
+  border: 1px solid $text-color;
+  box-shadow: 0 0 20px 2px rgba($text-color, 0.3%);
+  overflow-y: scroll;
+}
+
+.header {
+  @include flex(row, center, space-between, 0);
+  width: 100%;
+  background-color: $primary-color;
+  color: $text-color;
+  padding: 1rem 0.5rem;
+  .title {
+    @include flex(row, center, flex-start, 1rem);
+    font-weight: bolder;
+    text-transform: capitalize;
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-inline-end: 1rem;
+    color: $text-color;
+  }
+}
+
+.editor {
+  @include flex(column, start, flex-start, 0);
+  @extend %container;
+  width: 50vw;
+  height: 400px;
+}
+
+.extend {
+  width: 1000px;
+  width: 85vw;
+}
+
+textarea {
+  width: 100%;
+  display: block;
+  background-color: lighten($primary-color, 40%);
+  resize: vertical;
+  height: 400px;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.preview {
+  @include flex(column, start, flex-start, 0);
+  @extend %container;
+  width: 80vw;
+  height: 1000px;
+
+  &:nth-child(2) {
+    background-color: lighten($primary-color, 40%);
+  }
+}
+
+.hide {
+  display: none;
+}
+
+svg,
+img {
+  max-width: 80%;
+  display: block;
+  margin: auto;
+}
